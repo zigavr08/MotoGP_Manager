@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "MotoGPManager/1.0.0": {
+        "runtime": {
+          "MotoGPManager.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MotoGPManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

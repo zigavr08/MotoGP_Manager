@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MotoGPLibrary/MotoGPLibrary.csproj" Id="f5a68da1-2e52-4de1-9d4d-f9e573cee51d" />
+  <Project Path="MotoGPManager/MotoGPManager.csproj" />
+</Solution>
