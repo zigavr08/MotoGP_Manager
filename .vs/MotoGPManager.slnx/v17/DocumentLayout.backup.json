@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{F5A68DA1-2E52-4DE1-9D4D-F9E573CEE51D}|MotoGPLibrary\\MotoGPLibrary.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogplibrary\\motor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5A68DA1-2E52-4DE1-9D4D-F9E573CEE51D}|MotoGPLibrary\\MotoGPLibrary.csproj|solutionrelative:motogplibrary\\motor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogpmanager\\motogpmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|solutionrelative:motogpmanager\\motogpmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogpmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|solutionrelative:motogpmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogpmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|solutionrelative:motogpmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogpmanager\\formdirka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|solutionrelative:motogpmanager\\formdirka.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|c:\\users\\vracu\\onedrive\\namizje\\\u0161ola\\3.letnik\\opr\\seminarska\\motogpmanager\\motogpmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0E03475-ECB5-E1A3-72C9-9B35EEC1F811}|MotoGPManager\\MotoGPManager.csproj|solutionrelative:motogpmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +34,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Form1.cs",
+              "RelativeDocumentMoniker": "MotoGPManager\\Form1.cs",
+              "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Form1.cs",
+              "RelativeToolTip": "MotoGPManager\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T13:21:28.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormDirka.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\FormDirka.cs",
+              "RelativeDocumentMoniker": "MotoGPManager\\FormDirka.cs",
+              "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\FormDirka.cs [Design]",
+              "RelativeToolTip": "MotoGPManager\\FormDirka.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:15:04.671Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Form1.cs",
+              "RelativeDocumentMoniker": "MotoGPManager\\Form1.cs",
+              "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Form1.cs [Design]",
+              "RelativeToolTip": "MotoGPManager\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:15:00.994Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Program.cs",
+              "RelativeDocumentMoniker": "MotoGPManager\\Program.cs",
+              "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\Program.cs",
+              "RelativeToolTip": "MotoGPManager\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:14:59.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MotoGPManager",
+              "DocumentMoniker": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\MotoGPManager.csproj",
+              "RelativeDocumentMoniker": "MotoGPManager\\MotoGPManager.csproj",
+              "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPManager\\MotoGPManager.csproj",
+              "RelativeToolTip": "MotoGPManager\\MotoGPManager.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-10T12:14:56.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -28,7 +107,7 @@
               "RelativeDocumentMoniker": "MotoGPLibrary\\Motor.cs",
               "ToolTip": "C:\\Users\\vracu\\OneDrive\\Namizje\\\u0161ola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPLibrary\\Motor.cs",
               "RelativeToolTip": "MotoGPLibrary\\Motor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAA7wMIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T07:52:41.422Z",
               "EditorCaption": ""
