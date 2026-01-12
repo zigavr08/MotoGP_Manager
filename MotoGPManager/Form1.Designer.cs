@@ -29,63 +29,91 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            textBox2 = new TextBox();
+            label8 = new Label();
+            textBoxPriimek = new TextBox();
+            textBoxEkipa = new TextBox();
             label4 = new Label();
-            numericUpDown2 = new NumericUpDown();
-            numericUpDown1 = new NumericUpDown();
+            numericUpDownStMotorja = new NumericUpDown();
+            numericUpDownStarost = new NumericUpDown();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxIme = new TextBox();
             groupBox2 = new GroupBox();
-            numericUpDown3 = new NumericUpDown();
+            label9 = new Label();
+            numericUpDownHitrost = new NumericUpDown();
+            numericUpDownMoc = new NumericUpDown();
             label6 = new Label();
             label5 = new Label();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            textBoxModel = new TextBox();
+            buttonDodaj = new Button();
             label7 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            ime = new DataGridViewTextBoxColumn();
-            priimek = new DataGridViewTextBoxColumn();
-            starost = new DataGridViewTextBoxColumn();
-            ekipa = new DataGridViewTextBoxColumn();
-            tockeSezone = new DataGridViewTextBoxColumn();
-            modelMotorja = new DataGridViewTextBoxColumn();
-            mocMotorja = new DataGridViewTextBoxColumn();
+            buttonTocek = new Button();
+            buttonPrimerjaj = new Button();
+            listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            buttonOdtarni = new Button();
+            buttonPočisti = new Button();
+            label10 = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStMotorja).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStarost).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHitrost).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMoc).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(textBoxPriimek);
+            groupBox1.Controls.Add(textBoxEkipa);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(numericUpDown2);
-            groupBox1.Controls.Add(numericUpDown1);
+            groupBox1.Controls.Add(numericUpDownStMotorja);
+            groupBox1.Controls.Add(numericUpDownStarost);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxIme);
             groupBox1.Location = new Point(25, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(360, 168);
+            groupBox1.Size = new Size(422, 168);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Podatki o vozniku";
             // 
-            // textBox2
+            // label8
             // 
-            textBox2.Location = new Point(11, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(342, 23);
-            textBox2.TabIndex = 8;
+            label8.AutoSize = true;
+            label8.Location = new Point(224, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(50, 15);
+            label8.TabIndex = 6;
+            label8.Text = "Priimek:";
+            // 
+            // textBoxPriimek
+            // 
+            textBoxPriimek.Location = new Point(224, 37);
+            textBoxPriimek.Name = "textBoxPriimek";
+            textBoxPriimek.Size = new Size(192, 23);
+            textBoxPriimek.TabIndex = 1;
+            textBoxPriimek.KeyPress += textBox4_KeyPress;
+            // 
+            // textBoxEkipa
+            // 
+            textBoxEkipa.Location = new Point(11, 125);
+            textBoxEkipa.Name = "textBoxEkipa";
+            textBoxEkipa.Size = new Size(405, 23);
+            textBoxEkipa.TabIndex = 4;
+            textBoxEkipa.KeyPress += textBox2_KeyPress;
             // 
             // label4
             // 
@@ -93,31 +121,33 @@
             label4.Location = new Point(11, 107);
             label4.Name = "label4";
             label4.Size = new Size(38, 15);
-            label4.TabIndex = 7;
+            label4.TabIndex = 9;
             label4.Text = "Ekipa:";
             // 
-            // numericUpDown2
+            // numericUpDownStMotorja
             // 
-            numericUpDown2.Location = new Point(233, 81);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
-            numericUpDown2.TabIndex = 5;
+            numericUpDownStMotorja.Location = new Point(296, 81);
+            numericUpDownStMotorja.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            numericUpDownStMotorja.Name = "numericUpDownStMotorja";
+            numericUpDownStMotorja.Size = new Size(120, 23);
+            numericUpDownStMotorja.TabIndex = 3;
             // 
-            // numericUpDown1
+            // numericUpDownStarost
             // 
-            numericUpDown1.Location = new Point(13, 81);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 4;
+            numericUpDownStarost.Location = new Point(13, 81);
+            numericUpDownStarost.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
+            numericUpDownStarost.Name = "numericUpDownStarost";
+            numericUpDownStarost.Size = new Size(120, 23);
+            numericUpDownStarost.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(233, 63);
+            label3.Location = new Point(296, 63);
             label3.Name = "label3";
-            label3.Size = new Size(89, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Štartna številka:";
+            label3.Size = new Size(95, 15);
+            label3.TabIndex = 8;
+            label3.Text = "Številka motorja:";
             // 
             // label2
             // 
@@ -125,7 +155,7 @@
             label2.Location = new Point(11, 63);
             label2.Name = "label2";
             label2.Size = new Size(46, 15);
-            label2.TabIndex = 2;
+            label2.TabIndex = 7;
             label2.Text = "Starost:";
             // 
             // label1
@@ -133,82 +163,92 @@
             label1.AutoSize = true;
             label1.Location = new Point(11, 19);
             label1.Name = "label1";
-            label1.Size = new Size(86, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Ime in priimek:";
+            label1.Size = new Size(30, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Ime:";
             // 
-            // textBox1
+            // textBoxIme
             // 
-            textBox1.Location = new Point(11, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(342, 23);
-            textBox1.TabIndex = 0;
+            textBoxIme.Location = new Point(11, 37);
+            textBoxIme.Name = "textBoxIme";
+            textBoxIme.Size = new Size(192, 23);
+            textBoxIme.TabIndex = 0;
+            textBoxIme.KeyPress += textBox1_KeyPress;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(numericUpDown3);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(numericUpDownHitrost);
+            groupBox2.Controls.Add(numericUpDownMoc);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Location = new Point(405, 12);
+            groupBox2.Controls.Add(textBoxModel);
+            groupBox2.Location = new Point(457, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(360, 168);
-            groupBox2.TabIndex = 0;
+            groupBox2.Size = new Size(422, 168);
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Motor";
             // 
-            // numericUpDown3
+            // label9
             // 
-            numericUpDown3.Location = new Point(13, 81);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(120, 23);
-            numericUpDown3.TabIndex = 3;
+            label9.AutoSize = true;
+            label9.Location = new Point(296, 63);
+            label9.Name = "label9";
+            label9.Size = new Size(108, 15);
+            label9.TabIndex = 5;
+            label9.Text = "Maksimalna hitrost";
+            // 
+            // numericUpDownHitrost
+            // 
+            numericUpDownHitrost.Location = new Point(296, 81);
+            numericUpDownHitrost.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
+            numericUpDownHitrost.Name = "numericUpDownHitrost";
+            numericUpDownHitrost.Size = new Size(120, 23);
+            numericUpDownHitrost.TabIndex = 2;
+            // 
+            // numericUpDownMoc
+            // 
+            numericUpDownMoc.Location = new Point(13, 81);
+            numericUpDownMoc.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
+            numericUpDownMoc.Name = "numericUpDownMoc";
+            numericUpDownMoc.Size = new Size(120, 23);
+            numericUpDownMoc.TabIndex = 1;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(13, 63);
             label6.Name = "label6";
-            label6.Size = new Size(31, 15);
-            label6.TabIndex = 1;
-            label6.Text = "Moč";
+            label6.Size = new Size(81, 15);
+            label6.TabIndex = 4;
+            label6.Text = "Konjske moči:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(13, 19);
             label5.Name = "label5";
-            label5.Size = new Size(86, 15);
-            label5.TabIndex = 2;
-            label5.Text = "Mode motorja:";
+            label5.Size = new Size(89, 15);
+            label5.TabIndex = 3;
+            label5.Text = "Model motorja:";
             // 
-            // textBox3
+            // textBoxModel
             // 
-            textBox3.Location = new Point(11, 37);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(343, 23);
-            textBox3.TabIndex = 1;
+            textBoxModel.Location = new Point(11, 37);
+            textBoxModel.Name = "textBoxModel";
+            textBoxModel.Size = new Size(405, 23);
+            textBoxModel.TabIndex = 0;
             // 
-            // button1
+            // buttonDodaj
             // 
-            button1.Location = new Point(25, 186);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Dodaj voznika";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ime, priimek, starost, ekipa, tockeSezone, modelMotorja, mocMotorja });
-            dataGridView1.Location = new Point(25, 237);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(740, 194);
-            dataGridView1.TabIndex = 2;
+            buttonDodaj.Location = new Point(25, 186);
+            buttonDodaj.Name = "buttonDodaj";
+            buttonDodaj.Size = new Size(106, 23);
+            buttonDodaj.TabIndex = 2;
+            buttonDodaj.Text = "&Dodaj voznika";
+            buttonDodaj.UseVisualStyleBackColor = true;
+            buttonDodaj.Click += button1_Click;
             // 
             // label7
             // 
@@ -216,101 +256,143 @@
             label7.Location = new Point(25, 219);
             label7.Name = "label7";
             label7.Size = new Size(101, 15);
-            label7.TabIndex = 3;
+            label7.TabIndex = 9;
             label7.Text = "Seznam voznikov:";
             // 
-            // button2
+            // buttonTocek
             // 
-            button2.Location = new Point(25, 449);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Dodaj točke (+25)";
-            button2.UseVisualStyleBackColor = true;
+            buttonTocek.Location = new Point(25, 449);
+            buttonTocek.Name = "buttonTocek";
+            buttonTocek.Size = new Size(142, 23);
+            buttonTocek.TabIndex = 3;
+            buttonTocek.Text = "Dodaj točke (+25)";
+            buttonTocek.UseVisualStyleBackColor = true;
+            buttonTocek.Click += button2_Click;
             // 
-            // button3
+            // buttonPrimerjaj
             // 
-            button3.Location = new Point(187, 449);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 5;
-            button3.Text = "Primerjaj";
-            button3.UseVisualStyleBackColor = true;
+            buttonPrimerjaj.Location = new Point(173, 449);
+            buttonPrimerjaj.Name = "buttonPrimerjaj";
+            buttonPrimerjaj.Size = new Size(142, 23);
+            buttonPrimerjaj.TabIndex = 6;
+            buttonPrimerjaj.Text = "Primerjaj";
+            buttonPrimerjaj.UseVisualStyleBackColor = true;
+            buttonPrimerjaj.Click += button3_Click;
             // 
-            // button4
+            // listView1
             // 
-            button4.Location = new Point(303, 449);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 6;
-            button4.Text = "Nova dirka";
-            button4.UseVisualStyleBackColor = true;
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader3 });
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new Point(25, 237);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(854, 191);
+            listView1.TabIndex = 8;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
-            // ime
+            // columnHeader1
             // 
-            ime.HeaderText = "Ime";
-            ime.Name = "ime";
-            ime.ReadOnly = true;
+            columnHeader1.Text = "Ime";
+            columnHeader1.Width = 91;
             // 
-            // priimek
+            // columnHeader2
             // 
-            priimek.HeaderText = "Priimek";
-            priimek.Name = "priimek";
-            priimek.ReadOnly = true;
+            columnHeader2.Text = "Priimek";
+            columnHeader2.Width = 91;
             // 
-            // starost
+            // columnHeader4
             // 
-            starost.HeaderText = "Starost";
-            starost.Name = "starost";
-            starost.ReadOnly = true;
+            columnHeader4.Text = "Starost";
+            columnHeader4.Width = 91;
             // 
-            // ekipa
+            // columnHeader5
             // 
-            ekipa.HeaderText = "Ekipa";
-            ekipa.Name = "ekipa";
-            ekipa.ReadOnly = true;
+            columnHeader5.Text = "Številka motorja";
+            columnHeader5.Width = 100;
             // 
-            // tockeSezone
+            // columnHeader6
             // 
-            tockeSezone.HeaderText = "Točke Sezone";
-            tockeSezone.Name = "tockeSezone";
-            tockeSezone.ReadOnly = true;
+            columnHeader6.Text = "Ekipa";
+            columnHeader6.Width = 91;
             // 
-            // modelMotorja
+            // columnHeader7
             // 
-            modelMotorja.HeaderText = "Model motorja";
-            modelMotorja.Name = "modelMotorja";
-            modelMotorja.ReadOnly = true;
+            columnHeader7.Text = "Točke sezone";
+            columnHeader7.Width = 91;
             // 
-            // mocMotorja
+            // columnHeader8
             // 
-            mocMotorja.HeaderText = "Moč motorja";
-            mocMotorja.Name = "mocMotorja";
-            mocMotorja.ReadOnly = true;
+            columnHeader8.Text = "Model motorja";
+            columnHeader8.Width = 91;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Moč motorja";
+            columnHeader9.Width = 91;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Maximalna hitrost";
+            columnHeader3.Width = 110;
+            // 
+            // buttonOdtarni
+            // 
+            buttonOdtarni.Location = new Point(589, 449);
+            buttonOdtarni.Name = "buttonOdtarni";
+            buttonOdtarni.Size = new Size(142, 23);
+            buttonOdtarni.TabIndex = 4;
+            buttonOdtarni.Text = "&Odstrani dirkača";
+            buttonOdtarni.UseVisualStyleBackColor = true;
+            buttonOdtarni.Click += button5_Click;
+            // 
+            // buttonPočisti
+            // 
+            buttonPočisti.Location = new Point(737, 449);
+            buttonPočisti.Name = "buttonPočisti";
+            buttonPočisti.Size = new Size(142, 23);
+            buttonPočisti.TabIndex = 5;
+            buttonPočisti.Text = "&Počisti tabelo";
+            buttonPočisti.UseVisualStyleBackColor = true;
+            buttonPočisti.Click += button6_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(753, 219);
+            label10.Name = "label10";
+            label10.Size = new Size(95, 15);
+            label10.TabIndex = 10;
+            label10.Text = "Število voznikov:";
             // 
             // Form1
             // 
+            AcceptButton = buttonDodaj;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(779, 484);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            ClientSize = new Size(891, 484);
+            Controls.Add(label10);
+            Controls.Add(buttonPočisti);
+            Controls.Add(buttonOdtarni);
+            Controls.Add(listView1);
+            Controls.Add(buttonPrimerjaj);
+            Controls.Add(buttonTocek);
             Controls.Add(label7);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(buttonDodaj);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            MaximumSize = new Size(907, 523);
+            MinimumSize = new Size(907, 523);
             Name = "Form1";
             Text = "MotoGP Manager";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStMotorja).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStarost).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHitrost).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMoc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,30 +401,38 @@
 
         private GroupBox groupBox1;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxIme;
         private GroupBox groupBox2;
-        private TextBox textBox2;
+        private TextBox textBoxEkipa;
         private Label label4;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownStMotorja;
+        private NumericUpDown numericUpDownStarost;
         private Label label3;
         private Label label2;
         private Label label5;
-        private TextBox textBox3;
         private Label label6;
-        private NumericUpDown numericUpDown3;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private NumericUpDown numericUpDownMoc;
+        private Button buttonDodaj;
         private Label label7;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private DataGridViewTextBoxColumn ime;
-        private DataGridViewTextBoxColumn priimek;
-        private DataGridViewTextBoxColumn starost;
-        private DataGridViewTextBoxColumn ekipa;
-        private DataGridViewTextBoxColumn tockeSezone;
-        private DataGridViewTextBoxColumn modelMotorja;
-        private DataGridViewTextBoxColumn mocMotorja;
+        private Button buttonTocek;
+        private Button buttonPrimerjaj;
+        private Label label8;
+        private TextBox textBoxPriimek;
+        private ListView listView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private Label label9;
+        private NumericUpDown numericUpDownHitrost;
+        private ColumnHeader columnHeader3;
+        private TextBox textBoxModel;
+        private Button buttonOdtarni;
+        private Button buttonPočisti;
+        private Label label10;
     }
 }

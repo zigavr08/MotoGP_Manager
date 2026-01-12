@@ -9,25 +9,58 @@ namespace MotoGPLibrary
     
     public class Motor
     {
-        public string Model { get; set; }
-        public int KonjskihMoci { get; set; }
 
+        private int konjskihMoci;
+        private int hitrost;
+        public const int maxHitrost = 360;
+        public string Model { get; set; }
+
+        public int KonjskihMoci 
+        {
+            get { return konjskihMoci; }
+            set
+            {
+                if (value > 300)
+                {
+                    throw new Exception("Motor ime preveč konjskih moči!");
+                }
+
+                konjskihMoci = value;
+            }
+        }
+
+        public int MaxHitrost
+        {
+            get { return hitrost; }
+            set
+            {
+                if (value > maxHitrost)
+                {
+                    throw new Exception("Prehitro!");
+                }
+
+                hitrost = value;
+            }
+        }
         public Motor()
         {
             Model = "Neznan model!";
             KonjskihMoci = 0;
+            MaxHitrost = 0;
         }
 
-        public Motor(string model, int konjskihMoci)
+        public Motor(string model, int konjskihMoci, int hitrost)
         {
             Model = model;
             KonjskihMoci = konjskihMoci;
+            MaxHitrost = hitrost;
         }
 
         public Motor(Motor motor)
         {
             Model = motor.Model;
             KonjskihMoci = motor.KonjskihMoci;
+            MaxHitrost = motor.MaxHitrost;
         }
 
         ~Motor()
@@ -62,6 +95,10 @@ namespace MotoGPLibrary
                 {
                     throw new Exception("Voznik je premlad!");
                 }
+                else if (value > 50)
+                {
+                    throw new Exception("Voznik je prestar!");
+                }
                 else
                 {
                     starost = value;
@@ -86,24 +123,20 @@ namespace MotoGPLibrary
         public Voznik (Voznik voznik)
         {
             Ime = voznik.Ime;
-            Priimek = voznik.priimek;
-            Starost= voznik.starost;
+            Priimek = voznik.Priimek;
+            Starost= voznik.Starost;
         }
 
         ~Voznik()
         {
         }
 
-        public virtual string Izpis()
-        {
-            return ime + " " + priimek + ", " + starost + " let.";
-        }
     }
 
     public class MotoGP_Voznik : Voznik
     {
         public readonly int StevilkaMotorja;
-        public const int MaxHitrost = 360;
+        public static int StVoznikov = 0;
 
         public string Ekipa { get; set; }
         public int TockeSezone { get; set; }
@@ -140,12 +173,28 @@ namespace MotoGPLibrary
                 }
             }
         }
+
+        public int HitrostMotorja
+        {
+            get
+            {
+                if (NovMotor != null) return NovMotor.MaxHitrost;
+                return 0;
+            }
+        }
+
         public MotoGP_Voznik(string ime, string priimek, int starost, int stevilkaMotorja, string ekipa, Motor motor) : base(ime, priimek, starost) 
         {
+            if (stevilkaMotorja > 99 || stevilkaMotorja < 1)
+            {
+                throw new Exception("Številka motorja mora biti med 1 in 99!");
+            }
+
             StevilkaMotorja = stevilkaMotorja;
             Ekipa = ekipa;
             NovMotor = motor;
             TockeSezone =  0;
+            StVoznikov++;
         }
 
         public static bool operator > (MotoGP_Voznik v1, MotoGP_Voznik v2)
@@ -156,47 +205,10 @@ namespace MotoGPLibrary
         {
             return v1.TockeSezone < v2.TockeSezone;
         }
+
+        ~MotoGP_Voznik()
+        {
+            StVoznikov --;
+        }
     }
-
-    public class Dirka
-    {
-        public static int StVsehDirk = 0;
-
-        public string ImeDirke { get; set; }
-        public string Lokacija { get; set; }
-
-
-        public Dirka ()
-        {
-            ImeDirke = "Neznano ime dirke!";
-            Lokacija = "Neznana Lokacija!";
-            StVsehDirk++;
-        }
-
-        public Dirka (string imeDirke, string lokacija)
-        {
-            ImeDirke = imeDirke;
-            Lokacija = lokacija;
-            StVsehDirk++;
-        }
-
-        public Dirka (Dirka dirka)
-        {
-            ImeDirke = dirka.ImeDirke;
-            Lokacija = dirka.Lokacija;
-            StVsehDirk++;
-        }
-
-        public static string Izpis()
-        {
-            return "Število dirk v sezoni: " + StVsehDirk + ".";
-        }
-
-        ~Dirka()
-        {
-        }
-
-    }
-
-
 }

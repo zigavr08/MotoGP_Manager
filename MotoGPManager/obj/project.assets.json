@@ -1,11 +1,29 @@
 {
   "version": 3,
   "targets": {
-    "net10.0-windows7.0": {}
+    "net10.0-windows7.0": {
+      "MotoGPLibrary/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/MotoGPLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MotoGPLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MotoGPLibrary/1.0.0": {
+      "type": "project",
+      "path": "../MotoGPLibrary/MotoGPLibrary.csproj",
+      "msbuildProject": "../MotoGPLibrary/MotoGPLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0-windows7.0": []
+    "net10.0-windows7.0": [
+      "MotoGPLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\vracu\\.nuget\\packages\\": {},
@@ -38,7 +56,11 @@
       "frameworks": {
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\vracu\\OneDrive\\Namizje\\šola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPLibrary\\MotoGPLibrary.csproj": {
+              "projectPath": "C:\\Users\\vracu\\OneDrive\\Namizje\\šola\\3.Letnik\\OPR\\Seminarska\\MotoGPManager\\MotoGPLibrary\\MotoGPLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
