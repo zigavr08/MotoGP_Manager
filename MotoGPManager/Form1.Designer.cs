@@ -60,7 +60,7 @@
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            buttonOdtarni = new Button();
+            buttonOdstrani = new Button();
             buttonPočisti = new Button();
             label10 = new Label();
             groupBox1.SuspendLayout();
@@ -336,15 +336,15 @@
             columnHeader3.Text = "Maximalna hitrost";
             columnHeader3.Width = 110;
             // 
-            // buttonOdtarni
+            // buttonOdstrani
             // 
-            buttonOdtarni.Location = new Point(589, 449);
-            buttonOdtarni.Name = "buttonOdtarni";
-            buttonOdtarni.Size = new Size(142, 23);
-            buttonOdtarni.TabIndex = 4;
-            buttonOdtarni.Text = "&Odstrani dirkača";
-            buttonOdtarni.UseVisualStyleBackColor = true;
-            buttonOdtarni.Click += button5_Click;
+            buttonOdstrani.Location = new Point(589, 449);
+            buttonOdstrani.Name = "buttonOdstrani";
+            buttonOdstrani.Size = new Size(142, 23);
+            buttonOdstrani.TabIndex = 4;
+            buttonOdstrani.Text = "&Odstrani dirkača";
+            buttonOdstrani.UseVisualStyleBackColor = true;
+            buttonOdstrani.Click += button5_Click;
             // 
             // buttonPočisti
             // 
@@ -370,10 +370,11 @@
             AcceptButton = buttonDodaj;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonOdstrani;
             ClientSize = new Size(891, 484);
             Controls.Add(label10);
             Controls.Add(buttonPočisti);
-            Controls.Add(buttonOdtarni);
+            Controls.Add(buttonOdstrani);
             Controls.Add(listView1);
             Controls.Add(buttonPrimerjaj);
             Controls.Add(buttonTocek);
@@ -431,7 +432,7 @@
         private NumericUpDown numericUpDownHitrost;
         private ColumnHeader columnHeader3;
         private TextBox textBoxModel;
-        private Button buttonOdtarni;
+        private Button buttonOdstrani;
         private Button buttonPočisti;
         private Label label10;
     }

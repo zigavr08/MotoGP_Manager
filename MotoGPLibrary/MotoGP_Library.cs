@@ -9,12 +9,13 @@ namespace MotoGPLibrary
     
     public class Motor
     {
-
+        // lastnosti
         private int konjskihMoci;
         private int hitrost;
-        public const int maxHitrost = 360;
+        public const int maxHitrost = 360; //CONST
         public string Model { get; set; }
 
+        //Omejitev lastnosti
         public int KonjskihMoci 
         {
             get { return konjskihMoci; }
@@ -29,6 +30,7 @@ namespace MotoGPLibrary
             }
         }
 
+        //Omejitev lastnosti
         public int MaxHitrost
         {
             get { return hitrost; }
@@ -42,6 +44,8 @@ namespace MotoGPLibrary
                 hitrost = value;
             }
         }
+
+        //Konstruktor
         public Motor()
         {
             Model = "Neznan model!";
@@ -49,6 +53,7 @@ namespace MotoGPLibrary
             MaxHitrost = 0;
         }
 
+        //Konstruktor
         public Motor(string model, int konjskihMoci, int hitrost)
         {
             Model = model;
@@ -56,6 +61,7 @@ namespace MotoGPLibrary
             MaxHitrost = hitrost;
         }
 
+        //Konstruktor
         public Motor(Motor motor)
         {
             Model = motor.Model;
@@ -63,6 +69,7 @@ namespace MotoGPLibrary
             MaxHitrost = motor.MaxHitrost;
         }
 
+        //Destruktor
         ~Motor()
         {
         }
@@ -70,6 +77,8 @@ namespace MotoGPLibrary
 
     public abstract class Voznik
     {
+        // lastnosti
+
         private string ime;
         private string priimek;
         private int starost;
@@ -86,6 +95,7 @@ namespace MotoGPLibrary
             set { priimek = value; }
         }
 
+        //Omejitev lastnosti
         public int Starost
         {
             get { return starost; }
@@ -106,6 +116,7 @@ namespace MotoGPLibrary
             }
         }
 
+        //Konstruktor
         public Voznik()
         {
             ime = "Ime neznano!";
@@ -113,6 +124,7 @@ namespace MotoGPLibrary
             starost = 0;
         }
 
+        //Konstruktor
         public Voznik (string ime, string priimek, int starost)
         {
             Ime = ime;
@@ -120,6 +132,7 @@ namespace MotoGPLibrary
             Starost = starost;
         }
 
+        //Konstruktor
         public Voznik (Voznik voznik)
         {
             Ime = voznik.Ime;
@@ -127,6 +140,7 @@ namespace MotoGPLibrary
             Starost= voznik.Starost;
         }
 
+        //Destruktor
         ~Voznik()
         {
         }
@@ -135,17 +149,19 @@ namespace MotoGPLibrary
 
     public class MotoGP_Voznik : Voznik
     {
-        public readonly int StevilkaMotorja;
-        public static int StVoznikov = 0;
-
+        // lastnosti
+        public readonly int StevilkaMotorja; //READONLY
+        public static int StVoznikov = 0; //STATIC
         public string Ekipa { get; set; }
         public int TockeSezone { get; set; }
 
-        // objekt v objektu (Poleg imena, priimka in starosti se vsebuje vse podatke iz classa Motor)
+        // objekt v objektu (Poleg imena, priimka in starosti še vsebuje vse podatke iz classa Motor)
+        // nerabim spet pisati lastnosi in omejitev iz prejšnega classa
         public Motor NovMotor { get; set; }
 
         public string ModelMotorja
         {
+            //Omejitev lastnosti
             get
             {
                 if (NovMotor != null)
@@ -159,6 +175,7 @@ namespace MotoGPLibrary
             }
         }
 
+        //Omejitev lastnosti
         public int MocMotorja
         {
             get
@@ -174,17 +191,28 @@ namespace MotoGPLibrary
             }
         }
 
+        //Omejitev lastnosti
         public int HitrostMotorja
         {
             get
             {
-                if (NovMotor != null) return NovMotor.MaxHitrost;
-                return 0;
+                if (NovMotor != null)
+                {
+                    return NovMotor.MaxHitrost;
+
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
+        //Konstruktor
         public MotoGP_Voznik(string ime, string priimek, int starost, int stevilkaMotorja, string ekipa, Motor motor) : base(ime, priimek, starost) 
         {
+
+            //Omejitev lastnosti
             if (stevilkaMotorja > 99 || stevilkaMotorja < 1)
             {
                 throw new Exception("Številka motorja mora biti med 1 in 99!");
@@ -197,6 +225,8 @@ namespace MotoGPLibrary
             StVoznikov++;
         }
 
+        //PREOBLAGNAJE OPERATORJEV
+        //Primerja kateri je voznik je boljši da lahko potem to izpiše v tabeli
         public static bool operator > (MotoGP_Voznik v1, MotoGP_Voznik v2)
         {
             return v1.TockeSezone > v2.TockeSezone;
@@ -206,6 +236,7 @@ namespace MotoGPLibrary
             return v1.TockeSezone < v2.TockeSezone;
         }
 
+        //Destruktor
         ~MotoGP_Voznik()
         {
             StVoznikov --;
