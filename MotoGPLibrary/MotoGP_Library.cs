@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace MotoGPLibrary
 {
-    
+    //Vmesnik
+    public interface ITekmovalec
+    {
+        string Ime { get; set; }
+        string Priimek { get; set; }
+        string PraznujZmago();
+    }
     public class Motor
     {
-        // lastnosti
+        //Lastnosti
         private int konjskihMoci;
         private int hitrost;
         public const int maxHitrost = 360; //CONST
         public string Model { get; set; }
 
         //Omejitev lastnosti
-        public int KonjskihMoci 
+        public int KonjskihMoci
         {
             get { return konjskihMoci; }
             set
@@ -75,17 +81,16 @@ namespace MotoGPLibrary
         }
     }
 
-    public abstract class Voznik
+    public abstract class Voznik : ITekmovalec
     {
         // lastnosti
-
         private string ime;
         private string priimek;
         private int starost;
 
         public string Ime
         {
-            get { return ime; } 
+            get { return ime; }
             set { ime = value; }
         }
 
@@ -99,7 +104,7 @@ namespace MotoGPLibrary
         public int Starost
         {
             get { return starost; }
-            set 
+            set
             {
                 if (value < 16)
                 {
@@ -115,6 +120,8 @@ namespace MotoGPLibrary
                 }
             }
         }
+        //Abstraktna metoda
+        public abstract string PraznujZmago();
 
         //Konstruktor
         public Voznik()
@@ -125,7 +132,7 @@ namespace MotoGPLibrary
         }
 
         //Konstruktor
-        public Voznik (string ime, string priimek, int starost)
+        public Voznik(string ime, string priimek, int starost)
         {
             Ime = ime;
             Priimek = priimek;
@@ -133,11 +140,11 @@ namespace MotoGPLibrary
         }
 
         //Konstruktor
-        public Voznik (Voznik voznik)
+        public Voznik(Voznik voznik)
         {
             Ime = voznik.Ime;
             Priimek = voznik.Priimek;
-            Starost= voznik.Starost;
+            Starost = voznik.Starost;
         }
 
         //Destruktor
@@ -158,6 +165,37 @@ namespace MotoGPLibrary
         // objekt v objektu (Poleg imena, priimka in starosti še vsebuje vse podatke iz classa Motor)
         // nerabim spet pisati lastnosi in omejitev iz prejšnega classa
         public Motor NovMotor { get; set; }
+
+        //Indikserji
+        private int[] rezultatiZadnjihDirk = new int[5];
+        public int this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < rezultatiZadnjihDirk.Length)
+                {
+                    return rezultatiZadnjihDirk[index];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            set
+            {
+                if (index >= 0 && index < rezultatiZadnjihDirk.Length)
+                {
+                    rezultatiZadnjihDirk[index] = value;
+                }
+            }
+        }
+
+        //Polimerfizem
+        public override string PraznujZmago()
+        {
+            return "Voznik " + Ime + Priimek + " odpira šampanjec in pozdravlja ekipo " + Ekipa + "!";
+        }
 
         public string ModelMotorja
         {
@@ -209,7 +247,7 @@ namespace MotoGPLibrary
         }
 
         //Konstruktor
-        public MotoGP_Voznik(string ime, string priimek, int starost, int stevilkaMotorja, string ekipa, Motor motor) : base(ime, priimek, starost) 
+        public MotoGP_Voznik(string ime, string priimek, int starost, int stevilkaMotorja, string ekipa, Motor motor) : base(ime, priimek, starost)
         {
 
             //Omejitev lastnosti
@@ -221,17 +259,17 @@ namespace MotoGPLibrary
             StevilkaMotorja = stevilkaMotorja;
             Ekipa = ekipa;
             NovMotor = motor;
-            TockeSezone =  0;
+            TockeSezone = 0;
             StVoznikov++;
         }
 
         //PREOBLAGNAJE OPERATORJEV
         //Primerja kateri je voznik je boljši da lahko potem to izpiše v tabeli
-        public static bool operator > (MotoGP_Voznik v1, MotoGP_Voznik v2)
+        public static bool operator >(MotoGP_Voznik v1, MotoGP_Voznik v2)
         {
             return v1.TockeSezone > v2.TockeSezone;
         }
-        public static bool operator < (MotoGP_Voznik v1, MotoGP_Voznik v2)
+        public static bool operator <(MotoGP_Voznik v1, MotoGP_Voznik v2)
         {
             return v1.TockeSezone < v2.TockeSezone;
         }
@@ -239,7 +277,8 @@ namespace MotoGPLibrary
         //Destruktor
         ~MotoGP_Voznik()
         {
-            StVoznikov --;
+            StVoznikov--;
         }
     }
 }
+

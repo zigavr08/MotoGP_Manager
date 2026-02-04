@@ -52,7 +52,7 @@ namespace MotoGPManager
                 int hitrost = (int)numericUpDownHitrost.Value;
 
                 Motor novMotor = new Motor(model, moc, hitrost);
-                MotoGP_Voznik novVoznik = new MotoGP_Voznik(ime, priimek, starost, stevilka, ekipa,  novMotor);
+                MotoGP_Voznik novVoznik = new MotoGP_Voznik(ime, priimek, starost, stevilka, ekipa, novMotor);
 
                 //dodajanje voznika v tabelo
                 vsiVozniki.Add(novVoznik);
@@ -108,11 +108,11 @@ namespace MotoGPManager
             {
                 if (vsiVozniki[0] > vsiVozniki[1])
                 {
-                    MessageBox.Show(vsiVozniki[0].Ime + " vodi!");
+                    MessageBox.Show(vsiVozniki[0].PraznujZmago() + " Zmagovalec!");
                 }
                 else if (vsiVozniki[0] < vsiVozniki[1])
                 {
-                    MessageBox.Show(vsiVozniki[1].Ime + " vodi!");
+                    MessageBox.Show(vsiVozniki[1].PraznujZmago() + " Zmagovalec!");
                 }
                 else
                 {
@@ -140,11 +140,12 @@ namespace MotoGPManager
                 vrstica.SubItems.Add(voznik.StevilkaMotorja.ToString());
                 vrstica.SubItems.Add(voznik.Ekipa);
                 vrstica.SubItems.Add(voznik.TockeSezone.ToString());
-
                 vrstica.SubItems.Add(voznik.ModelMotorja);
                 vrstica.SubItems.Add(voznik.MocMotorja.ToString() + " KM");
-
                 vrstica.SubItems.Add(voznik.HitrostMotorja.ToString() + " km/h");
+
+                string zgodovina = voznik[0] + ", " + voznik[1] + ", " + voznik[2] + ", " + voznik[3] + ", " + voznik[4];
+                vrstica.SubItems.Add (zgodovina);
 
                 listView1.Items.Add(vrstica);
 
@@ -160,7 +161,7 @@ namespace MotoGPManager
                 }
             }
             //Izpisovanje v label št. voznikov
-                label10.Text = "Število voznikov: " + MotoGP_Voznik.StVoznikov.ToString();
+            label10.Text = "Število voznikov: " + MotoGP_Voznik.StVoznikov.ToString();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -213,6 +214,47 @@ namespace MotoGPManager
             MotoGP_Voznik.StVoznikov = 0;
             OsveziTabelo();
             MessageBox.Show("Vsi podatki so bili izbrisani.");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (vsiVozniki.Count > 0)
+            {
+                Random rdm = new Random();
+
+                foreach (MotoGP_Voznik voznik in vsiVozniki)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        int[] mozneTocke = { 0, 10, 15, 20, 25 };
+                        voznik[i] = mozneTocke[rdm.Next(mozneTocke.Length)];
+                    }
+                }
+
+                OsveziTabelo();
+                MessageBox.Show("Rezultati zadnjih 5 dirk!");
+            }
+
+            else
+            {
+                MessageBox.Show("Najprej dodaj voznike!");
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

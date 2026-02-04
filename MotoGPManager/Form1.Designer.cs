@@ -60,9 +60,11 @@
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
             buttonOdstrani = new Button();
             buttonPočisti = new Button();
             label10 = new Label();
+            button = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStMotorja).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStarost).BeginInit();
@@ -183,7 +185,7 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(textBoxModel);
-            groupBox2.Location = new Point(457, 12);
+            groupBox2.Location = new Point(515, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(422, 168);
             groupBox2.TabIndex = 1;
@@ -281,12 +283,12 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader3 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader3, columnHeader10 });
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
-            listView1.Location = new Point(25, 237);
+            listView1.Location = new Point(19, 237);
             listView1.Name = "listView1";
-            listView1.Size = new Size(854, 191);
+            listView1.Size = new Size(918, 191);
             listView1.TabIndex = 8;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -294,17 +296,17 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Ime";
-            columnHeader1.Width = 91;
+            columnHeader1.Width = 88;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Priimek";
-            columnHeader2.Width = 91;
+            columnHeader2.Width = 88;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Starost";
-            columnHeader4.Width = 91;
+            columnHeader4.Width = 88;
             // 
             // columnHeader5
             // 
@@ -314,31 +316,36 @@
             // columnHeader6
             // 
             columnHeader6.Text = "Ekipa";
-            columnHeader6.Width = 91;
+            columnHeader6.Width = 88;
             // 
             // columnHeader7
             // 
             columnHeader7.Text = "Točke sezone";
-            columnHeader7.Width = 91;
+            columnHeader7.Width = 88;
             // 
             // columnHeader8
             // 
             columnHeader8.Text = "Model motorja";
-            columnHeader8.Width = 91;
+            columnHeader8.Width = 88;
             // 
             // columnHeader9
             // 
             columnHeader9.Text = "Moč motorja";
-            columnHeader9.Width = 91;
+            columnHeader9.Width = 88;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Maximalna hitrost";
             columnHeader3.Width = 110;
             // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Rezultati";
+            columnHeader10.Width = 110;
+            // 
             // buttonOdstrani
             // 
-            buttonOdstrani.Location = new Point(589, 449);
+            buttonOdstrani.Location = new Point(647, 449);
             buttonOdstrani.Name = "buttonOdstrani";
             buttonOdstrani.Size = new Size(142, 23);
             buttonOdstrani.TabIndex = 4;
@@ -348,7 +355,7 @@
             // 
             // buttonPočisti
             // 
-            buttonPočisti.Location = new Point(737, 449);
+            buttonPočisti.Location = new Point(795, 449);
             buttonPočisti.Name = "buttonPočisti";
             buttonPočisti.Size = new Size(142, 23);
             buttonPočisti.TabIndex = 5;
@@ -359,11 +366,21 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(753, 219);
+            label10.Location = new Point(842, 219);
             label10.Name = "label10";
             label10.Size = new Size(95, 15);
             label10.TabIndex = 10;
             label10.Text = "Število voznikov:";
+            // 
+            // button
+            // 
+            button.Location = new Point(332, 186);
+            button.Name = "button";
+            button.Size = new Size(115, 23);
+            button.TabIndex = 11;
+            button.Text = "Simuliraj Sezono";
+            button.UseVisualStyleBackColor = true;
+            button.Click += button1_Click_2;
             // 
             // Form1
             // 
@@ -371,7 +388,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonOdstrani;
-            ClientSize = new Size(891, 484);
+            ClientSize = new Size(953, 486);
+            Controls.Add(button);
             Controls.Add(label10);
             Controls.Add(buttonPočisti);
             Controls.Add(buttonOdstrani);
@@ -382,10 +400,11 @@
             Controls.Add(buttonDodaj);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            MaximumSize = new Size(907, 523);
-            MinimumSize = new Size(907, 523);
+            MaximumSize = new Size(969, 525);
+            MinimumSize = new Size(969, 525);
             Name = "Form1";
             Text = "MotoGP Manager";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStMotorja).EndInit();
@@ -435,5 +454,7 @@
         private Button buttonOdstrani;
         private Button buttonPočisti;
         private Label label10;
+        private Button button;
+        private ColumnHeader columnHeader10;
     }
 }
