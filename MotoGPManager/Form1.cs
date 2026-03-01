@@ -54,6 +54,13 @@ namespace MotoGPManager
                 Motor novMotor = new Motor(model, moc, hitrost);
                 MotoGP_Voznik novVoznik = new MotoGP_Voznik(ime, priimek, starost, stevilka, ekipa, novMotor);
 
+
+                //DOGODEK
+                novVoznik.ObvestiloOTockah += delegate (string sporocilo)
+                {
+                    MessageBox.Show(sporocilo, "Nova obvestila z dirkališèa");
+                };              
+                
                 //dodajanje voznika v tabelo
                 vsiVozniki.Add(novVoznik);
                 OsveziTabelo();
@@ -145,7 +152,7 @@ namespace MotoGPManager
                 vrstica.SubItems.Add(voznik.HitrostMotorja.ToString() + " km/h");
 
                 string zgodovina = voznik[0] + ", " + voznik[1] + ", " + voznik[2] + ", " + voznik[3] + ", " + voznik[4];
-                vrstica.SubItems.Add (zgodovina);
+                vrstica.SubItems.Add(zgodovina);
 
                 listView1.Items.Add(vrstica);
 
@@ -254,6 +261,11 @@ namespace MotoGPManager
         private void Form1_Load(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void numericUpDownStarost_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

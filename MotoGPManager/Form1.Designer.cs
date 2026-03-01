@@ -141,6 +141,7 @@
             numericUpDownStarost.Name = "numericUpDownStarost";
             numericUpDownStarost.Size = new Size(120, 23);
             numericUpDownStarost.TabIndex = 2;
+            numericUpDownStarost.ValueChanged += numericUpDownStarost_ValueChanged;
             // 
             // label3
             // 
@@ -288,6 +289,7 @@
             listView1.GridLines = true;
             listView1.Location = new Point(19, 237);
             listView1.Name = "listView1";
+            listView1.Scrollable = false;
             listView1.Size = new Size(918, 191);
             listView1.TabIndex = 8;
             listView1.UseCompatibleStateImageBehavior = false;

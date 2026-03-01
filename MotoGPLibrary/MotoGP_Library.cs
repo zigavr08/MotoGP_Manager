@@ -160,7 +160,33 @@ namespace MotoGPLibrary
         public readonly int StevilkaMotorja; //READONLY
         public static int StVoznikov = 0; //STATIC
         public string Ekipa { get; set; }
-        public int TockeSezone { get; set; }
+
+
+
+        //DELEGAT IN DOGODEK
+        public delegate void SpremembaTockDelegate(string sporocilo);
+        public event SpremembaTockDelegate ObvestiloOTockah;
+
+        //LASTNOST ZA TOČKE
+        private int tockeSezone;
+        public int TockeSezone
+        {
+            get { return tockeSezone; }
+            set
+            {
+                int stareTocke = tockeSezone;
+                tockeSezone = value;
+
+                if (tockeSezone > stareTocke)
+                {
+                    ObvestiloOTockah("Voznik " + Ime + Priimek + " je dobil točke! Zdaj jih ima " + tockeSezone + ".");
+                }
+            }
+        }
+
+
+
+
 
         // objekt v objektu (Poleg imena, priimka in starosti še vsebuje vse podatke iz classa Motor)
         // nerabim spet pisati lastnosi in omejitev iz prejšnega classa
