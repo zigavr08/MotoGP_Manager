@@ -1,13 +1,21 @@
 using MotoGPLibrary;
 namespace MotoGPManager
 {
+    /// <summary>
+    /// Glavno okno aplikacije za upravljanje MotoGP dirkaèev in motorjev.
+    /// Vsebuje logiko za vnos, prikaz, primerjavo in posodabljanje podatkov.
+    /// </summary>
     public partial class Form1 : Form
     {
         //Ustavri prazen seznam
         List<MotoGP_Voznik> vsiVozniki = new List<MotoGP_Voznik>();
+        //Zaèetek izvajanje(onemogoèeni doloèeni gumbi)
+        /// <summary>
+        /// Konstruktor obrazca, ki inicializira komponente in nastavi zaèetno stanje uporabniškega vmesnika.
+        /// </summary>
         public Form1()
         {
-            //Zaèetek izvajanje(onemogoèeni doloèeni gumbi)
+
             InitializeComponent();
             listView1.DoubleClick += listView1_DoubleClick;
             listView1.View = View.Details;
@@ -20,6 +28,10 @@ namespace MotoGPManager
         }
 
         //GUMB DODAJ
+        /// <summary>
+        /// Odziv na klik gumba za dodajanje. Preveri vnose, ustvari ustrezen objekt (Voznik/MladiVoznik),
+        /// naroèi se na dogodek obvešèanja o toèkah in osveži tabelo.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             //Preverjanje sveh vnosnih polij
@@ -97,6 +109,10 @@ namespace MotoGPManager
         }
 
         // GUMB ZA DODAJANJE TOÈK
+        /// <summary>
+        /// Metoda za dodajanje prvenstvenih toèk izbranemu dirkaèu. 
+        /// Sprememba lastnosti TockeSezone sproži dogodek ObvestiloOTockah.
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             //Prevejranje ce je izbrana vrstica v tabeli za dodajanje toèk
@@ -118,6 +134,9 @@ namespace MotoGPManager
         }
 
         //GUMB PRIMERJAJ
+        /// <summary>
+        /// Metoda za primerjavo prvih dveh dirkaèev v seznamu z uporabo preobremenjenih operatorjev.
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             //Preverja da sta vsaj dva voznika v tabeli da ju lahko preverja
@@ -143,6 +162,9 @@ namespace MotoGPManager
         }
 
         //Metoda ki za vsako izvajanje gumba osveži tabelo da se podatki posodobijo
+        /// <summary>
+        /// Pomožna metoda, ki poèisti ListView in naloži posodobljene podatke iz seznama vseh voznikov.
+        /// </summary>
         public void OsveziTabelo()
         {
             listView1.Items.Clear();
@@ -206,6 +228,9 @@ namespace MotoGPManager
         }
 
         //GUMB ODSTRANI
+        /// <summary>
+        /// Odstrani izbranega voznika iz seznama in posodobi statièno števec voznikov.
+        /// </summary>
         private void button5_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedIndices.Count > 0)
@@ -255,6 +280,10 @@ namespace MotoGPManager
 
         }
         // DVOJNI KLIK NA TABELO ZA IZPIS PODATKOV (INDEKSER)
+        /// <summary>
+        /// Odziv na dogodek dvojnega klika na vrstico v tabeli. 
+        /// Preko indekserja pridobi podatke o vozniku in jih prikaže v osebni karton.
+        /// </summary>
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             if (listView1.SelectedIndices.Count > 0)

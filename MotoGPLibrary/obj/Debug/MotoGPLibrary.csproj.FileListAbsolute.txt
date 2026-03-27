@@ -4,3 +4,4 @@ C:\Users\vracu\OneDrive\Namizje\šola\3.Letnik\OPR\Seminarska\MotoGPManager\Moto
 C:\Users\vracu\OneDrive\Namizje\šola\3.Letnik\OPR\Seminarska\MotoGPManager\MotoGPLibrary\obj\Debug\MotoGPLibrary.csproj.CoreCompileInputs.cache
 C:\Users\vracu\OneDrive\Namizje\šola\3.Letnik\OPR\Seminarska\MotoGPManager\MotoGPLibrary\obj\Debug\MotoGPLibrary.dll
 C:\Users\vracu\OneDrive\Namizje\šola\3.Letnik\OPR\Seminarska\MotoGPManager\MotoGPLibrary\obj\Debug\MotoGPLibrary.pdb
+C:\Users\vracu\OneDrive\Namizje\šola\3.Letnik\OPR\Seminarska\MotoGPManager\MotoGPLibrary\bin\Debug\MotoGPLibrary.xml

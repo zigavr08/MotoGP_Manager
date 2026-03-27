@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace MotoGPLibrary
 {
-    //Vmesnik
+    /// <summary>
+    /// Vmesnik, ki določa osnovne lastnosti za vsakega tekmovalca.
+    /// </summary>
     public interface ITekmovalec
     {
         string Ime { get; set; }
         string Priimek { get; set; }
     }
+
+    /// <summary>
+    /// Razred, ki predstavlja lastnosti motorja.
+    /// </summary>
     public class Motor
     {
-        //Lastnosti
         private int konjskihMoci;
         private int hitrost;
-        public const int maxHitrost = 360; //CONST
+
+        /// <summary>
+        /// Maksimalna hitrost, ki jo motor lahko doseže (konstanta).
+        /// </summary>
+        public const int maxHitrost = 360;
         public string Model { get; set; }
 
         //Omejitev lastnosti
@@ -59,6 +68,12 @@ namespace MotoGPLibrary
         }
 
         //Konstruktor
+        /// <summary>
+        /// Konstruktor za ustvarjanje novega motorja s specifičnimi parametri.
+        /// </summary>
+        /// <param name="model">Ime modela motorja.</param>
+        /// <param name="konjskihMoci">Število konjskih moči.</param>
+        /// <param name="hitrost">Trenutna maksimalna hitrost.</param>
         public Motor(string model, int konjskihMoci, int hitrost)
         {
             Model = model;
@@ -80,6 +95,9 @@ namespace MotoGPLibrary
         }
     }
 
+    /// <summary>
+    /// Osnovni abstraktni razred za vse vrste voznikov.
+    /// </summary>
     public abstract class Voznik : ITekmovalec
     {
         // lastnosti
@@ -120,6 +138,10 @@ namespace MotoGPLibrary
             }
         }
         //Abstraktna metoda
+        /// <summary>
+        /// Abstraktna metoda za praznovanje, ki jo morajo implementirati vsi izpeljani razredi.
+        /// </summary>
+        /// <returns>Niz z opisom praznovanja.</returns>
         public abstract string PraznujZmago();
 
         //Konstruktor
@@ -153,10 +175,16 @@ namespace MotoGPLibrary
 
     }
 
+    /// <summary>
+    /// Glavni razred za MotoGP voznika, ki vključuje logiko točkovanja in motorja.
+    /// </summary>
     public class MotoGP_Voznik : Voznik
     {
         // lastnosti
         public readonly int StevilkaMotorja; //READONLY
+        /// <summary>
+        /// Statistični števec vseh ustvarjenih voznikov v sistemu.
+        /// </summary>
         public static int StVoznikov = 0; //STATIC
         public string Ekipa { get; set; }
 
@@ -164,6 +192,9 @@ namespace MotoGPLibrary
 
         //DELEGAT IN DOGODEK
         public delegate void SpremembaTockDelegate(string sporocilo);
+        /// <summary>
+        /// Dogodek, ki se sproži, ko voznik prejme nove prvenstvene točke.
+        /// </summary>
         public event SpremembaTockDelegate ObvestiloOTockah;
 
         //LASTNOST ZA TOČKE
@@ -189,6 +220,11 @@ namespace MotoGPLibrary
         public Motor NovMotor { get; set; }
 
         //Indikserji
+        /// <summary>
+        /// Indekser za dostop do osebnega kartona voznika preko ključnih besed.
+        /// </summary>
+        /// <param name="iskaniPodatek">Ključ (ime, priimek, starost, ekipa, motor).</param>
+        /// <returns>Opis zahtevanega podatka.</returns>
         public string this[string iskaniPodatek]
         {
             get
@@ -275,6 +311,9 @@ namespace MotoGPLibrary
 
         //PREOBLAGNAJE OPERATORJEV
         //Primerja kateri je voznik je boljši da lahko potem to izpiše v tabeli
+        /// <summary>
+        /// Preobremenjen operator za primerjavo dveh voznikov glede na točke.
+        /// </summary>
         public static bool operator >(MotoGP_Voznik v1, MotoGP_Voznik v2)
         {
             return v1.TockeSezone > v2.TockeSezone;
@@ -296,11 +335,17 @@ namespace MotoGPLibrary
             return "Voznik " + Ime + " " + Priimek + " odpira šampanjec...";
         }
     }
+    /// <summary>
+    /// Razred za mladoletne voznike s prilagojenim obnašanjem (polimorfizem).
+    /// </summary>
     public class MladiVoznik : MotoGP_Voznik
     {
         public MladiVoznik(string ime, string priimek, int starost, int stevilka, string ekipa, Motor motor): base(ime, priimek, starost, stevilka, ekipa, motor) { }
 
         //Polimorfizem
+        /// <summary>
+        /// Povezana metoda za praznovanje, prilagojena mladoletnim osebam.
+        /// </summary>
         public override string PraznujZmago()
         {
             return "Mladoletni voznik " + Ime + " " + Priimek + " pije otroški šampanjec z ekipo " + Ekipa + "!";
