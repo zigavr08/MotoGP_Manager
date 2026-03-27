@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MotoGPLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MotoGPLibrary.ITekmovalec">
+            <summary>
+            Vmesnik, ki določa osnovne lastnosti za vsakega tekmovalca.
+            </summary>
+        </member>
+        <member name="T:MotoGPLibrary.Motor">
+            <summary>
+            Razred, ki predstavlja lastnosti motorja.
+            </summary>
+        </member>
+        <member name="F:MotoGPLibrary.Motor.maxHitrost">
+            <summary>
+            Maksimalna hitrost, ki jo motor lahko doseže (konstanta).
+            </summary>
+        </member>
+        <member name="M:MotoGPLibrary.Motor.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Konstruktor za ustvarjanje novega motorja s specifičnimi parametri.
+            </summary>
+            <param name="model">Ime modela motorja.</param>
+            <param name="konjskihMoci">Število konjskih moči.</param>
+            <param name="hitrost">Trenutna maksimalna hitrost.</param>
+        </member>
+        <member name="T:MotoGPLibrary.Voznik">
+            <summary>
+            Osnovni abstraktni razred za vse vrste voznikov.
+            </summary>
+        </member>
+        <member name="M:MotoGPLibrary.Voznik.PraznujZmago">
+            <summary>
+            Abstraktna metoda za praznovanje, ki jo morajo implementirati vsi izpeljani razredi.
+            </summary>
+            <returns>Niz z opisom praznovanja.</returns>
+        </member>
+        <member name="T:MotoGPLibrary.MotoGP_Voznik">
+            <summary>
+            Glavni razred za MotoGP voznika, ki vključuje logiko točkovanja in motorja.
+            </summary>
+        </member>
+        <member name="F:MotoGPLibrary.MotoGP_Voznik.StVoznikov">
+            <summary>
+            Statistični števec vseh ustvarjenih voznikov v sistemu.
+            </summary>
+        </member>
+        <member name="E:MotoGPLibrary.MotoGP_Voznik.ObvestiloOTockah">
+            <summary>
+            Dogodek, ki se sproži, ko voznik prejme nove prvenstvene točke.
+            </summary>
+        </member>
+        <member name="P:MotoGPLibrary.MotoGP_Voznik.Item(System.String)">
+            <summary>
+            Indekser za dostop do osebnega kartona voznika preko ključnih besed.
+            </summary>
+            <param name="iskaniPodatek">Ključ (ime, priimek, starost, ekipa, motor).</param>
+            <returns>Opis zahtevanega podatka.</returns>
+        </member>
+        <member name="M:MotoGPLibrary.MotoGP_Voznik.op_GreaterThan(MotoGPLibrary.MotoGP_Voznik,MotoGPLibrary.MotoGP_Voznik)">
+            <summary>
+            Preobremenjen operator za primerjavo dveh voznikov glede na točke.
+            </summary>
+        </member>
+        <member name="T:MotoGPLibrary.MladiVoznik">
+            <summary>
+            Razred za mladoletne voznike s prilagojenim obnašanjem (polimorfizem).
+            </summary>
+        </member>
+        <member name="M:MotoGPLibrary.MladiVoznik.PraznujZmago">
+            <summary>
+            Povezana metoda za praznovanje, prilagojena mladoletnim osebam.
+            </summary>
+        </member>
+    </members>
+</doc>
