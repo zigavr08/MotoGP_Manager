@@ -9,6 +9,7 @@ namespace MotoGPManager
         {
             //Zaèetek izvajanje(onemogoèeni doloèeni gumbi)
             InitializeComponent();
+            listView1.DoubleClick += listView1_DoubleClick;
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
@@ -52,8 +53,17 @@ namespace MotoGPManager
                 int hitrost = (int)numericUpDownHitrost.Value;
 
                 Motor novMotor = new Motor(model, moc, hitrost);
-                MotoGP_Voznik novVoznik = new MotoGP_Voznik(ime, priimek, starost, stevilka, ekipa, novMotor);
 
+                //Preverja kaj sebo izpisalo(Polimerfizem)
+                MotoGP_Voznik novVoznik;
+                if (starost < 18)
+                {
+                    novVoznik = new MladiVoznik(ime, priimek, starost, stevilka, ekipa, novMotor);
+                }
+                else
+                {
+                    novVoznik = new MotoGP_Voznik(ime, priimek, starost, stevilka, ekipa, novMotor);
+                }
 
                 //DOGODEK
                 novVoznik.ObvestiloOTockah += delegate (string sporocilo)
@@ -151,9 +161,6 @@ namespace MotoGPManager
                 vrstica.SubItems.Add(voznik.MocMotorja.ToString() + " KM");
                 vrstica.SubItems.Add(voznik.HitrostMotorja.ToString() + " km/h");
 
-                string zgodovina = voznik[0] + ", " + voznik[1] + ", " + voznik[2] + ", " + voznik[3] + ", " + voznik[4];
-                vrstica.SubItems.Add(zgodovina);
-
                 listView1.Items.Add(vrstica);
 
                 //Prevrja èe sta dva voznika v tabeli
@@ -235,27 +242,6 @@ namespace MotoGPManager
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if (vsiVozniki.Count > 0)
-            {
-                Random rdm = new Random();
-
-                foreach (MotoGP_Voznik voznik in vsiVozniki)
-                {
-                    for (int i = 0; i < 5; i++)
-                    {
-                        int[] mozneTocke = { 0, 10, 15, 20, 25 };
-                        voznik[i] = mozneTocke[rdm.Next(mozneTocke.Length)];
-                    }
-                }
-
-                OsveziTabelo();
-                MessageBox.Show("Rezultati zadnjih 5 dirk!");
-            }
-
-            else
-            {
-                MessageBox.Show("Najprej dodaj voznike!");
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -268,5 +254,23 @@ namespace MotoGPManager
         {
 
         }
+        // DVOJNI KLIK NA TABELO ZA IZPIS PODATKOV (INDEKSER)
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView1.SelectedIndices.Count > 0)
+            {
+                int index = listView1.SelectedIndices[0];
+                MotoGP_Voznik izbrani = vsiVozniki[index];
+
+                string izpis = "PODATKI O VOZNIKU:\n\n" +
+                               "Ime in priimek: " + izbrani["ime"] + " " + izbrani["priimek"] + "\n" +
+                               "Starost: " + izbrani["starost"] + "\n" +
+                               "Ekipa: " + izbrani["ekipa"] + "\n" +
+                               "Motor: " + izbrani["motor"];
+
+                MessageBox.Show(izpis, "Osebni karton voznika");
+            }
+        }
     }
 }
+

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotoGPManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2dff366b4c85ac2f8f12230e1154a6d172d1364")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bee15873e4ad698b1394a3d0ba02661d4272c405")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotoGPManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotoGPManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

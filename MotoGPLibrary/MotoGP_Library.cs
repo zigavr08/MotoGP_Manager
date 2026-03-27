@@ -11,7 +11,6 @@ namespace MotoGPLibrary
     {
         string Ime { get; set; }
         string Priimek { get; set; }
-        string PraznujZmago();
     }
     public class Motor
     {
@@ -179,13 +178,10 @@ namespace MotoGPLibrary
 
                 if (tockeSezone > stareTocke)
                 {
-                    ObvestiloOTockah("Voznik " + Ime + Priimek + " je dobil točke! Zdaj jih ima " + tockeSezone + ".");
+                    ObvestiloOTockah("Voznik " + Ime + " " + Priimek + " je dobil točke!...");
                 }
             }
         }
-
-
-
 
 
         // objekt v objektu (Poleg imena, priimka in starosti še vsebuje vse podatke iz classa Motor)
@@ -193,35 +189,23 @@ namespace MotoGPLibrary
         public Motor NovMotor { get; set; }
 
         //Indikserji
-        private int[] rezultatiZadnjihDirk = new int[5];
-        public int this[int index]
+        public string this[string iskaniPodatek]
         {
             get
             {
-                if (index >= 0 && index < rezultatiZadnjihDirk.Length)
+                switch (iskaniPodatek.ToLower())
                 {
-                    return rezultatiZadnjihDirk[index];
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-
-            set
-            {
-                if (index >= 0 && index < rezultatiZadnjihDirk.Length)
-                {
-                    rezultatiZadnjihDirk[index] = value;
+                    case "ime": return Ime;
+                    case "priimek": return Priimek;
+                    case "starost": return Starost.ToString() + " let";
+                    case "ekipa": return Ekipa;
+                    case "motor": return ModelMotorja;
+                    default: return "Podatek ne obstaja!";
                 }
             }
         }
 
-        //Polimerfizem
-        public override string PraznujZmago()
-        {
-            return "Voznik " + Ime + Priimek + " odpira šampanjec in pozdravlja ekipo " + Ekipa + "!";
-        }
+
 
         public string ModelMotorja
         {
@@ -286,7 +270,7 @@ namespace MotoGPLibrary
             Ekipa = ekipa;
             NovMotor = motor;
             TockeSezone = 0;
-            StVoznikov++;
+            StVoznikov++; 
         }
 
         //PREOBLAGNAJE OPERATORJEV
@@ -304,6 +288,22 @@ namespace MotoGPLibrary
         ~MotoGP_Voznik()
         {
             StVoznikov--;
+        }   
+        
+        //Polimorfizem
+        public override string PraznujZmago()
+        {
+            return "Voznik " + Ime + " " + Priimek + " odpira šampanjec...";
+        }
+    }
+    public class MladiVoznik : MotoGP_Voznik
+    {
+        public MladiVoznik(string ime, string priimek, int starost, int stevilka, string ekipa, Motor motor): base(ime, priimek, starost, stevilka, ekipa, motor) { }
+
+        //Polimorfizem
+        public override string PraznujZmago()
+        {
+            return "Mladoletni voznik " + Ime + " " + Priimek + " pije otroški šampanjec z ekipo " + Ekipa + "!";
         }
     }
 }
