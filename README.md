@@ -27,9 +27,11 @@ V kodi so implementirani naslednji koncepti:
 Projekt je zgrajen tako, da za delovanje ne potrebuje nobenih zunanjih baz podatkov ali dodatnih knjižnic.
 
 1. Klonirajte ta repozitorij na svoj lokalni računalnik (ali prenesite ZIP):
-   `git clone [TUKAJ_VNESI_SVOJ_GITHUB_LINK]`
-2. Odprite mapo s projektom in dvokliknite na datoteko rešitve (`.sln`), da jo odprete v okolju **Visual Studio**.
-3. Pritisnite tipko **F5** (ali gumb Start v orodni vrstici), da prevedete in zaženete aplikacijo.
+   
+git clone https://github.com/zigavr08/MotoGP_Manager.git
+3. Odprite mapo s projektom in dvokliknite na datoteko rešitve MotoGPManager.slnx.
+4. Projekt zaženite v okolju Visual Studio 2022 (različica 17.10 ali novejša) ali Visual Studio 2026.
+5. Pritisnite tipko F5 (ali gumb Start v orodni vrstici), da prevedete in zaženete aplikacijo.
 
 ---
 
