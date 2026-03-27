@@ -1,0 +1,14 @@
+# Skrite nastavitve Visual Studia
+.vs/
+*.user
+*.suo
+*.rsuser
+*.sln.docstates
+
+# Prevedena koda (te mape mora računalnik ustvariti sam)
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
