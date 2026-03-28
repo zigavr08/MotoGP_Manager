@@ -30,7 +30,7 @@ Projekt je zgrajen tako, da za delovanje ne potrebuje nobenih zunanjih baz podat
 ```
 git clone https://github.com/zigavr08/MotoGP_Manager.git
 ```
-2. Odprite mapo s projektom in dvokliknite na datoteko rešitve MotoGPManager.slnx.
+2. Odprite mapo s projektom in dvokliknite na datoteko MotoGPManager.slnx.
 3. Projekt zaženite v okolju Visual Studio 2022 (različica 17.10 ali novejša) ali Visual Studio 2026.
 4. Pritisnite tipko F5 (ali gumb Start v orodni vrstici), da prevedete in zaženete aplikacijo.
 
